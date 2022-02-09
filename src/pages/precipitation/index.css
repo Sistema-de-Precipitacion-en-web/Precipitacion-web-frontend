@@ -1,0 +1,10 @@
+.size-form{
+    height: 80px;
+}
+.container-form {
+  margin-top: 10px;
+}
+.container-btn{
+  display: flex;
+  justify-content: end;
+}
