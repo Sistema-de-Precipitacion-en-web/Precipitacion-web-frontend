@@ -47,7 +47,7 @@ function Nav() {
                   className={(isActive) => (isActive ? "activeLink" : "")}
                   to="/"
                 >
-                  Home
+                  Inicio
                 </NavLink>
               </li>
               <li
@@ -81,7 +81,7 @@ function Nav() {
               >
                 <NavLink
                   className={(isActive) => (isActive ? "activeLink" : "")}
-                  to="/"
+                  to="/cicloAgricola"
                 >
                   Ciclo agrícola
                 </NavLink>

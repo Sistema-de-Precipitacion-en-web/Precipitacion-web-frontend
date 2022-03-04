@@ -1,8 +1,11 @@
 import { Routes, Route } from "react-router-dom";
+import CycleData from "../pages/cycle-a/CycleData";
 import Home from '../pages/Home';
 import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
 import Precipitation from '../pages/precipitation/PrecipitationData'
 import Producers from '../pages/producers/index'
+
+
 
 function Directions() {
   return (
@@ -11,6 +14,7 @@ function Directions() {
       <Route path="/precipitacion" element={<Precipitation />} />
       <Route path="/productores" element={<Producers />} />
       <Route path="/precipitacion/editar" element={<EditPrecipitation />}/>
+      <Route path="/cicloAgricola" element={<CycleData />}/>
     </Routes>
   );
 }

@@ -9,8 +9,6 @@ function PrecipitationData() {
     <div className="container-fluid"> 
 <div className="d-flex justify-content-between align-items-end size-form">
   <div>
-  <input type="search" name="search" placeholder="Buscar" />
-  <button id="search"><FontAwesomeIcon icon={faSearch} size="1x" /></button>
   </div>
   <Button title="Agregar" icon={faPlus} size="1x" to="/precipitacion/editar"/>
 </div>
