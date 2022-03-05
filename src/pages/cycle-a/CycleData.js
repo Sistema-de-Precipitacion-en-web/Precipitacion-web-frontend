@@ -1,52 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import axiosClient from '../../config/axiosClient';
-
+import React, { useEffect, useState } from "react";
+import axiosClient from "../../config/axiosClient";
 
 function CycleData() {
- const [cycles, setCycles] = useState([]);
+  const [cycles, setCycles] = useState([]);
 
- const getCycles = async () => {
-   const response = await axiosClient.get('/api/v1/ciclo-agricola')
-   console.log(response.data)
-    setCycles(response.data);
- };
+  const getCycles = async () => {
+    const response = await axiosClient.get("/api/v1/ciclo-agricola");
+    console.log(response.data.data[0]);
+    setCycles(response.data.data);
+  };
+  //resolver el como accesar a el objeto de un array
+  useEffect(() => {
+    getCycles();
+  }, []);
 
- useEffect(() => {
-   getCycles();
- }, []);
-
- const rederCycle = () => {
-   return (
-<tbody>
-  {
-    cycles.map((cycle, index) => (
-      <tr>
-      <th scope="row">{index +1}</th>
-      <td>{cycle.cicloAgricola}</td>
-      <td>{cycle.fecha}</td>
-      <td>{cycle.fase}</td>
-    </tr>
-    ))
-  }
-</tbody>
-   );
- };
+  const rederCycle = () => {
+    return (
+      <tbody>
+        {cycles.map((cycle, index) => (
+          <tr key={index}>
+            <td>{cycle.cicloAgricola}</td>
+            <td>{cycle.semana}</td>
+            <td>{cycle.dia}</td>
+            <td>{cycle.mes}</td>
+            <td>{cycle.anio}</td>
+            <td>{cycle.fase}</td>
+          </tr>
+        ))}
+      </tbody>
+    );
+  };
 
   return (
     <div>
       <table className="table caption-top">
-  <caption>Ciclo agricola</caption>
-  <thead>
-    <tr>
-      <th scope="col">Ciclo Agricola</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Fase</th>
-    </tr>
-  </thead>
-
-</table>
+        <caption>Ciclo agricola</caption>
+        <thead>
+          <tr>
+        
+            <th scope="col">Ciclo Agricola</th>
+            <th scope="col">Semana</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Mes</th>
+            <th scope="col">Año</th>
+            <th scope="col">Fase</th>
+          </tr>
+        </thead>
+        {rederCycle()}
+      </table>
     </div>
-  )
+  );
 }
 
-export default CycleData
+export default CycleData;

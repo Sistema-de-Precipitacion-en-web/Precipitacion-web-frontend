@@ -6,9 +6,9 @@ import "./index.css";
 
 function Nav() {
   return (
-    <nav class="navbar  color-nav ">
-      <div class="container-fluid">
-        <a class="title-text" href="/">
+    <nav className="navbar  color-nav ">
+      <div className="container-fluid">
+        <a className="title-text" href="/">
           Sistema de recipitación web
         </a>
         <FontAwesomeIcon
@@ -20,18 +20,18 @@ function Nav() {
           aria-controls="offcanvasNavbar"
         />
         <div
-          class="offcanvas offcanvas-end"
+          className="offcanvas offcanvas-end"
           tabindex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
-          <div class="offcanvas-header">
+          <div className="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
               Menu
             </h5>
             <button
               type="button"
-              class="btn-close text-reset"
+              className="btn-close text-reset"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
@@ -39,7 +39,7 @@ function Nav() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li
-                class="li-menu"
+                className="li-menu"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
@@ -63,7 +63,7 @@ function Nav() {
                 </NavLink>
               </li>
               <li
-                class="li-menu"
+                className="li-menu"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
@@ -75,7 +75,7 @@ function Nav() {
                 </NavLink>
               </li>
               <li
-                class="li-menu"
+                className="li-menu"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
@@ -87,7 +87,7 @@ function Nav() {
                 </NavLink>
               </li>
               <li
-                class="li-menu"
+                className="li-menu"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
