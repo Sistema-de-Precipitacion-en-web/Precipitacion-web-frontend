@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import "./button.css";
+import "./styles/button.css";
 
 const Button = (props) => (
   <NavLink className="button" to={props.to}>

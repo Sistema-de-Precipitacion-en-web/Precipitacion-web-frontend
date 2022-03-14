@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import CycleData from "../pages/cycle-a/CycleData";
+import EditCycle from "../pages/cycle-a/EditCycle";
 import Home from '../pages/Home';
 import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
 import Precipitation from '../pages/precipitation/PrecipitationData'
@@ -15,6 +16,7 @@ function Directions() {
       <Route path="/productores" element={<Producers />} />
       <Route path="/precipitacion/editar" element={<EditPrecipitation />}/>
       <Route path="/cicloAgricola" element={<CycleData />}/>
+      <Route path="/cicloAgricola/agregar" element={<EditCycle />}/>
     </Routes>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
+import Button from "../../components/Button";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 function CycleData() {
   const [cycles, setCycles] = useState([]);
@@ -32,12 +34,12 @@ function CycleData() {
   };
 
   return (
-    <div>
+    <div className="" >
+     <div className="d-flex justify-content-end p-3"><Button icon={faUser} to="/cicloAgricola/agregar" title="Agregar" size="1x"/> </div>
       <table className="table caption-top">
         <caption>Ciclo agricola</caption>
         <thead>
           <tr>
-        
             <th scope="col">Ciclo Agricola</th>
             <th scope="col">Semana</th>
             <th scope="col">Dia</th>
