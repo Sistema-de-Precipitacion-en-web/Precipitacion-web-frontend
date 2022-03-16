@@ -1,0 +1,17 @@
+.container-table{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+}
+caption{
+    font-size: 20px;
+    font-weight: 300;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    background-color: blanchedalmond;
+    border-collapse: collapse;
+    border: 1px solid rgb(0, 0, 0);
+  }
+ 
