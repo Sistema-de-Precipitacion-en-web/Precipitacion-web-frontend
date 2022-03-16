@@ -1,35 +1,61 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Sidebar from "react-sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
+import { faAlignJustify, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./styles/nav.css";
 
-this.addEventListener('DOMContentLoaded', () => {
-const btn = document.querySelector('.btn')  
-if (btn)  {
-  btn.addEventListener('click', () => {
-    const menu_items = document.querySelector('.menu_items')
-    menu_items.classList.toggle('show')
-  })
-}
-});
+const mql = window.matchMedia(`(min-width: 800px)`);
 
+class Nav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: true,
+    };
 
-function Nav() {
-  return (
-    <nav className="navigation">
-      <label className="logo" >Precipitación Web</label>
-      <ul className="menu_items">
-        <li><Link to="/" className="link">Precipitación</Link></li>
-        <li><Link to="/" className="link">Ciclo Agricola</Link></li>
-        <li><Link to="/" className="link">Municipios</Link></li>
-        <li><Link to="/" className="link">Localidades</Link></li>
-      </ul>
-      <span className="btn">
-        <FontAwesomeIcon  icon={faAlignJustify} /> 
-      </span>
-    </nav>
-  );
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+  onSetSidebarOpen(open) {
+    this.setState({ sidebarOpen: open });
+  }
+  mediaQueryChanged() {
+    this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
+  }
+
+  render() {
+    return (
+      <nav className="navigation">
+        <Sidebar
+          sidebar={
+            <div className="slide">
+              <div className="title-slide">
+                <span className="title-pos">Menu</span>
+                <span className="icon-close" onClick={() => this.onSetSidebarOpen(false)}> <FontAwesomeIcon icon={faXmark} /></span>
+              </div>
+              <div className="container-links">
+              <div className="container-l"><Link to="/cicloAgricola" className="link">Precipitación</Link></div>
+              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
+              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
+              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
+              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
+              </div>
+            </div>
+          }
+          open={this.state.sidebarOpen}
+          onSetOpen={this.onSetSidebarOpen}
+          pullRight={true}
+          styles={{ sidebar: { background: "white", width: 300 } }}
+        >
+          <></>
+        </Sidebar>
+        <div className="logo">Precipitacion Web</div>
+        <span className="btn" onClick={() => this.onSetSidebarOpen(true)}>
+          <FontAwesomeIcon icon={faAlignJustify} />
+        </span>
+      </nav>
+    );
+  }
 }
 
 export default Nav;
