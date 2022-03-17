@@ -3,14 +3,16 @@
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  padding: 5px;
-  width: 95px;
+  padding: 6px;
+  width: 85px;
+  font-weight: 300;
   border-radius: 5px;
-  color: #000000;
-  background-color: #f0f0f0;
+  color: #ffffff;
+  background-color: #52656e;
 }
 .button:hover {
   background-color: #ffffff;
   color: #000000;
-  border: 2px solid #f0f0f0;
+  transition: 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

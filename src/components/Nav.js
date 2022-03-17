@@ -45,7 +45,7 @@ class Nav extends React.Component {
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           pullRight={true}
-          styles={{ sidebar: { background: "white", width: 300 } }}
+          styles={{ sidebar: { background: "white", width: 300, } }}
         >
           <></>
         </Sidebar>

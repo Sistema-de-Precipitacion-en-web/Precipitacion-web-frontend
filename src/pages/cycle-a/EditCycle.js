@@ -2,8 +2,8 @@ import React from 'react'
 
 function EditCycle() {
   return (
-    <div className='bg-secondary'>
-dd
+    <div className='container-form'>
+      pagina para editar
     </div>
   )
 }

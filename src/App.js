@@ -7,8 +7,11 @@ import "./App.css"
 function App() {
   return (
     <BrowserRouter>
+    
     <Navbar /> 
+    <div className="routes"> 
     <Directions />
+    </div>
     </BrowserRouter>
   );
 }

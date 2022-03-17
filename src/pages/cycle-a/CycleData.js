@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
 import Button from "../../components/Button";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import './tableStyle.css'
 
 function CycleData() {
@@ -22,12 +23,12 @@ function CycleData() {
       <tbody>
         {cycles.map((cycle, index) => (
           <tr key={index}>
-            <td>{cycle.cicloAgricola}</td>
-            <td>{cycle.semana}</td>
-            <td>{cycle.dia}</td>
-            <td>{cycle.mes}</td>
-            <td>{cycle.anio}</td>
-            <td>{cycle.fase}</td>
+            <td data-label="ciclo">{cycle.cicloAgricola}</td>
+            <td data-label="semana">{cycle.semana}</td>
+            <td data-label="dia">{cycle.dia}</td>
+            <td data-label="mes">{cycle.mes}</td>
+            <td data-label="año">{cycle.anio}</td>
+            <td data-label="fase">{cycle.fase}</td>
           </tr>
         ))}
       </tbody>
@@ -36,7 +37,7 @@ function CycleData() {
 
   return (
     <div className="container-table" >
-     <div className=""><Button icon={faUser} to="/cicloAgricola/agregar" title="Agregar" size="1x"/> </div>
+     <div className="button-p"><Button icon={faPlus} to='/cicloAgricola/agregar' title="Agregar" size="1x"/> </div>
       <table>
         <caption>Ciclo agricola</caption>
         <thead>
