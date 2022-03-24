@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
 import Button from "../../components/Button";
-import { Link } from "react-router-dom";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import './tableStyle.css'
 
@@ -10,7 +9,7 @@ function CycleData() {
 
   const getCycles = async () => {
     const response = await axiosClient.get("/api/v1/ciclo-agricola");
-    console.log(response.data.data[0]);
+    //console.log(response.data.data[0]);
     setCycles(response.data.data);
   };
   
@@ -37,7 +36,7 @@ function CycleData() {
 
   return (
     <div className="container-table" >
-     <div className="button-p"><Button icon={faPlus} to='/cicloAgricola/agregar' title="Agregar" size="1x"/> </div>
+     <div className="button-p"><Button icon={faPlus} to='/cicloAgricola/agregar' style="default" title="Agregar" size="1x"/> </div>
       <table>
         <caption>Ciclo agricola</caption>
         <thead>

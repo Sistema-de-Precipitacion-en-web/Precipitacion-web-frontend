@@ -1,4 +1,4 @@
-.button {
+.default {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +10,43 @@
   color: #ffffff;
   background-color: #52656e;
 }
-.button:hover {
+.default:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.primary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px;
+  width: 85px;
+  font-weight: 300;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #4496BD;
+}
+.primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.2s linear;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.secondary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px;
+  width: 85px;
+  font-weight: 300;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #adadad;
+}
+.secondary:hover {
   background-color: #ffffff;
   color: #000000;
   transition: 0.2s linear;

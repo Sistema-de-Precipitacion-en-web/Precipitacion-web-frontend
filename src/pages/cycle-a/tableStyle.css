@@ -5,9 +5,9 @@
   margin: 10px;
   flex-direction: column;
 }
-.button-p{
-    display: flex;
-    justify-content: end;
+.button-p {
+  display: flex;
+  justify-content: end;
 }
 table caption {
   font-size: 1.5em;
@@ -36,7 +36,7 @@ table th {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
+/*responsive de tabla*/
 @media screen and (max-width: 600px) {
   table {
     border: 0;
@@ -87,11 +87,69 @@ table th {
   }
 }
 /*Estilos para el formulario*/
-
-.container-form{
+.container-form {
   display: flex;
   padding: 5px;
   margin: 10px;
-  background-color: aqua;
+  align-items: center;
+  justify-content: center;
+}
+.card-form {
+  display: flex;
+  width: 460px;
+  height: 430px;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+}
+.form {
+  display: flex;
+  width: 100%;
+  height: 350px;
+  margin: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+input {
+  width: 350px;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+}
+label {
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  width: 80px;
+  opacity: 50%;
+}
+.input-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-a {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
+/*responsive formulario*/
+@media screen and (max-width: 500px) {
+  .container-form {
+    width: auto;
+  }
+  .card-form {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+  .input-line{
+    width: 100%;
+  }
+ 
+}
