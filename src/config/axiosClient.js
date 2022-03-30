@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-baseURL: 'https://whispering-lake-40144.herokuapp.com/' 
+baseURL: 'http://localhost:3000/api/v1' 
 });
 
 export default axiosClient;

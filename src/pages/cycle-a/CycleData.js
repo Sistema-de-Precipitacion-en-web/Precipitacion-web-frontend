@@ -8,7 +8,7 @@ function CycleData() {
   const [cycles, setCycles] = useState([]);
 
   const getCycles = async () => {
-    const response = await axiosClient.get("/api/v1/ciclo-agricola");
+    const response = await axiosClient.get("/ciclo-agricola");
     //console.log(response.data.data[0]);
     setCycles(response.data.data);
   };
@@ -37,7 +37,7 @@ function CycleData() {
   return (
     <div className="container-table" >
      <div className="button-p"><Button icon={faPlus} to='/cicloAgricola/agregar' style="default" title="Agregar" size="1x"/> </div>
-      <table>
+      <table className="table-c">
         <caption>Ciclo agricola</caption>
         <thead>
           <tr>

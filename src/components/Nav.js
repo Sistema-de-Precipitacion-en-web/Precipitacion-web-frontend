@@ -34,10 +34,11 @@ class Nav extends React.Component {
                 <span className="icon-close" onClick={() => this.onSetSidebarOpen(false)}> <FontAwesomeIcon icon={faXmark} /></span>
               </div>
               <div className="container-links">
-              <div className="container-l"><Link to="/cicloAgricola" className="link">Precipitación</Link></div>
-              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
-              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
-              <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
+              <div className="container-l"><Link to="/Precipitacion-web-frontend" className="link">Inicio</Link></div>
+              <div className="container-l"><Link to="/cicloAgricola" className="link">Ciclo Agricola</Link></div>
+              <div className="container-l"><Link to="/estados" className="link">Estados</Link></div>
+              <div className="container-l"><Link to="/municipios" className="link">Municipios</Link></div>
+              <div className="container-l"><Link to="/municipios/agregar" className="link">Localidades</Link></div>
               <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
               </div>
             </div>
