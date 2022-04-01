@@ -38,7 +38,7 @@ class Nav extends React.Component {
               <div className="container-l"><Link to="/cicloAgricola" className="link">Ciclo Agricola</Link></div>
               <div className="container-l"><Link to="/estados" className="link">Estados</Link></div>
               <div className="container-l"><Link to="/municipios" className="link">Municipios</Link></div>
-              <div className="container-l"><Link to="/municipios/agregar" className="link">Localidades</Link></div>
+              <div className="container-l"><Link to="/localidades" className="link">Localidades</Link></div>
               <div className="container-l"><Link to="/" className="link">Menu Item prueba</Link></div>
               </div>
             </div>
