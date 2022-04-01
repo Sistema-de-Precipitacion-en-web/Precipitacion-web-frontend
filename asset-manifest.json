@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Precipitacion-web-frontend/static/css/main.989aa49d.css",
-    "main.js": "/Precipitacion-web-frontend/static/js/main.80a28b66.js",
+    "main.css": "/Precipitacion-web-frontend/static/css/main.0e8619bf.css",
+    "main.js": "/Precipitacion-web-frontend/static/js/main.90e2d2f1.js",
     "index.html": "/Precipitacion-web-frontend/index.html",
-    "main.989aa49d.css.map": "/Precipitacion-web-frontend/static/css/main.989aa49d.css.map",
-    "main.80a28b66.js.map": "/Precipitacion-web-frontend/static/js/main.80a28b66.js.map"
+    "main.0e8619bf.css.map": "/Precipitacion-web-frontend/static/css/main.0e8619bf.css.map",
+    "main.90e2d2f1.js.map": "/Precipitacion-web-frontend/static/js/main.90e2d2f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.989aa49d.css",
-    "static/js/main.80a28b66.js"
+    "static/css/main.0e8619bf.css",
+    "static/js/main.90e2d2f1.js"
   ]
 }
