@@ -26,5 +26,9 @@ Propiedades
 | :-------- | :------- | :------------------------- |
 | `icon{}` | `string` | Define el icono |
 | `to='/'` | `string` | Establece la ruta de redireccion |
+| `style=""` | `string` | Color del boton 'default' 'primary' 'secondary' |
+| `title=""` | `string` | Texto del boton |
+| `size=""` | `string` | tamaño del icono definido por fontAwesome|
 
+### Nav
 
