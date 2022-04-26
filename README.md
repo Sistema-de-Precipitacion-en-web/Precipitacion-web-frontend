@@ -31,4 +31,10 @@ Propiedades
 | `size=""` | `string` | tamaño del icono definido por fontAwesome|
 
 ### Nav
+componente de navegacion
+```js
+import Navbar from "./components/Nav";
+
+<Navbar /> 
+```
 
