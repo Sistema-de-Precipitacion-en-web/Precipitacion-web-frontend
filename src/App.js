@@ -6,8 +6,8 @@ import "./App.css"
 
 function App() {
   return (
+    //para el funcionamiento de routes debe estar contenido dentro de browserrouter
     <BrowserRouter>
-    
     <Navbar /> 
     <div className="routes"> 
     <Directions />

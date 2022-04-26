@@ -34,7 +34,7 @@ function Municipalities() {
   return (
       <div > 
        <div className="container-tab" >
-     <div className="button-box-m"><Button icon={faPlus} to='/municipios/agregar' style="default" title="Agregar" size="1x"/> </div>
+     <div className="button-box-m"><Button icon={faPlus} to='/municipios/agregar' style="default" title="Agregar" size="1x"/></div>
       <table className="table-m">
         <caption>Municipios</caption>
         <thead>
