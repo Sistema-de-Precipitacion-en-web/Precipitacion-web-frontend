@@ -1,16 +1,14 @@
-import React from "react";
-import Directions from "./Routes/Directions";
+import Router from "./Router/Router";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Nav";
 import "./App.css";
 
 export function App() {
   return (
-    //para el funcionamiento de routes debe estar contenido dentro de browserrouter
     <BrowserRouter>
       <Navbar />
       <div className="routes">
-        <Directions />
+        <Router />
       </div>
     </BrowserRouter>
   );

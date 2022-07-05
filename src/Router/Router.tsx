@@ -10,10 +10,10 @@ import EditStates from "../pages/states/EditStates";
 import Municipalities from "../pages/municipalities/Municipalities";
 import EditMunicipalities from "../pages/municipalities/EditMunicipalities";
 
-function Directions() {
+function Router() {
   return (
     <Routes>
-      <Route path="/Precipitacion-web-frontend" element={<Home />} />
+      <Route path="/" element={<Home />} />
       {/* Rutas ciclo agricola*/}
       <Route path="/cicloAgricola" element={<CycleData />} />
       <Route path="/cicloAgricola/agregar" element={<EditCycle />} />
@@ -32,4 +32,4 @@ function Directions() {
   );
 }
 
-export default Directions;
+export default Router;
