@@ -47,7 +47,7 @@ function AgregarCiclo() {
   };
 
   const handleCloseModal = () => {
-    navigate("/cicloAgricola");
+    navigate("/ciclo-agricola");
   };
 
   return (
@@ -97,7 +97,7 @@ function AgregarCiclo() {
               <LinkButton
                 icon={faXmark}
                 variant="secondary"
-                to="/cicloAgricola"
+                to="/ciclo-agricola"
                 title="Cancelar"
                 size="1x"
               />

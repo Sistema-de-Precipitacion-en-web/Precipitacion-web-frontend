@@ -50,7 +50,7 @@ class Nav extends React.Component<
                   </Link>
                 </div>
                 <div className="container-l">
-                  <Link to="/cicloAgricola" className="link">
+                  <Link to="/ciclo-agricola" className="link">
                     Ciclo Agricola
                   </Link>
                 </div>

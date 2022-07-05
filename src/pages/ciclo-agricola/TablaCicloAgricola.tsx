@@ -38,7 +38,7 @@ function TablaCicloAgricola() {
       <div className="button-p">
         <LinkButton
           icon={faPlus}
-          to="/cicloAgricola/agregar"
+          to="/ciclo-agricola/agregar"
           variant="default"
           title="Agregar"
           size="1x"

@@ -15,8 +15,8 @@ function Router() {
     <Routes>
       <Route path="/" element={<Home />} />
       {/* Rutas ciclo agricola*/}
-      <Route path="/cicloAgricola" element={<TablaCicloAgricola />} />
-      <Route path="/cicloAgricola/agregar" element={<AgregarCiclo />} />
+      <Route path="/ciclo-agricola" element={<TablaCicloAgricola />} />
+      <Route path="/ciclo-agricola/agregar" element={<AgregarCiclo />} />
       {/* Rutas estados*/}
       <Route path="/estados" element={<States />} />
       <Route path="/estados/agregar" element={<EditStates />} />
