@@ -15,6 +15,7 @@ function AgregarCiclo() {
   const navigate = useNavigate();
 
   const [isModalOpened, setIsModalOpened] = useState(false);
+  const [existsError, setExistsError] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,11 +34,12 @@ function AgregarCiclo() {
 
   const saveCycle = async () => {
     setIsLoading(true);
+    setExistsError(false);
     try {
-      console.log(ciclo);
       await axiosClient.post("/ciclo-agricola", ciclo);
       setIsModalOpened(true);
     } catch (error) {
+      setExistsError(true);
       console.log("Este es el error", error);
     } finally {
       setIsLoading(false);
@@ -103,6 +105,7 @@ function AgregarCiclo() {
                 Guardar
               </button>
             </div>
+            {existsError && <p>Ha ocurrido un error, intentlo más tarde</p>}
           </form>
         </div>
       </div>
