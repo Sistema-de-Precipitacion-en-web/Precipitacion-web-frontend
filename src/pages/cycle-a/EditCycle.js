@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import axiosClient from "../../config/axiosClient";
-import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function EditCycle() {
-
   const [cycle, setCycle] = useState({
-    cicloAgricola: '',
-    fecha: '',
-    fase: '',
+    cicloAgricola: "",
+    fecha: "",
+    fase: "",
   });
 
   const handleChange = (e) => {
@@ -25,9 +24,7 @@ function EditCycle() {
   };
 
   const saveCycle = () => {
-    axiosClient.post('/api/v1/ciclo-agricola', cycle)
-    .then(res => {
-      console.log(res);
+    axiosClient.post("/api/v1/ciclo-agricola", cycle).then((res) => {
       alert(res.message);
     });
   };
@@ -73,7 +70,7 @@ function EditCycle() {
           <div className="btn-a">
             <Button
               icon={faXmark}
-              style="secondary"
+              variant="secondary"
               to="/cicloAgricola"
               title="Cancelar"
               size="1x"

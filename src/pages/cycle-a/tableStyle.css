@@ -7,13 +7,13 @@
 }
 .button-p {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .table-c caption {
   font-size: 1.5em;
   margin: 0.5em 0 0.75em;
 }
-.table-c{
+.table-c {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-collapse: collapse;
   margin: 0;
@@ -142,8 +142,7 @@ label {
   input {
     width: 100%;
   }
-  .input-line{
+  .input-line {
     width: 100%;
   }
- 
 }

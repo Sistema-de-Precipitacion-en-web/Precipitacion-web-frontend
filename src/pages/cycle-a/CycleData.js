@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
 import Button from "../../components/Button";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import './tableStyle.css'
+import "./tableStyle.css";
 
 function CycleData() {
   const [cycles, setCycles] = useState([]);
 
   const getCycles = async () => {
     const response = await axiosClient.get("/ciclo-agricola");
-    //console.log(response.data.data[0]);
     setCycles(response.data.data);
   };
-  
+
   useEffect(() => {
     getCycles();
   }, []);
@@ -35,18 +34,26 @@ function CycleData() {
   };
 
   return (
-    <div className="container-table" >
-     <div className="button-p"><Button icon={faPlus} to='/cicloAgricola/agregar' style="default" title="Agregar" size="1x"/> </div>
+    <div className="container-table">
+      <div className="button-p">
+        <Button
+          icon={faPlus}
+          to="/cicloAgricola/agregar"
+          variant="default"
+          title="Agregar"
+          size="1x"
+        />{" "}
+      </div>
       <table className="table-c">
         <caption>Ciclo agricola</caption>
         <thead>
           <tr>
-            <th >Ciclo Agricola</th>
-            <th >Semana</th>
-            <th >Dia</th>
-            <th >Mes</th>
-            <th >Año</th>
-            <th >Fase</th>
+            <th>Ciclo Agricola</th>
+            <th>Semana</th>
+            <th>Dia</th>
+            <th>Mes</th>
+            <th>Año</th>
+            <th>Fase</th>
           </tr>
         </thead>
         {rederCycle()}

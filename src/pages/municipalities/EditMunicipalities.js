@@ -1,7 +1,5 @@
-import React, { useState } from "react";
 import Button from "../../components/Button";
-import axiosClient from "../../config/axiosClient";
-import { faFloppyDisk, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function EditMunicipalities() {
   return (
@@ -20,25 +18,20 @@ function EditMunicipalities() {
           </div>
           <div className="input-line">
             <label htmlFor="fecha">Nombre del Municipio:</label>
-            <input
-              type="text"
-              id="fecha"
-              name="fecha"
-              placeholder="dddd"
-            />
+            <input type="text" id="fecha" name="fecha" placeholder="dddd" />
           </div>
           <div className="input-line">
             <label htmlFor="fase">Clave del Estado</label>
             <select name="estates" id="states" className="selected">
-            <option>item de prueba 1</option>
-            <option>item de prueba 1</option>
-            <option>item de prueba 1</option>
+              <option>item de prueba 1</option>
+              <option>item de prueba 1</option>
+              <option>item de prueba 1</option>
             </select>
           </div>
           <div className="btn-a">
             <Button
               icon={faXmark}
-              style="secondary"
+              variant="secondary"
               to="/municipios"
               title="Cancelar"
               size="1x"

@@ -1,10 +1,10 @@
-.size-form{
-    height: 80px;
+.size-form {
+  height: 80px;
 }
 .container-form {
   margin-top: 10px;
 }
-.container-btn{
+.container-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
