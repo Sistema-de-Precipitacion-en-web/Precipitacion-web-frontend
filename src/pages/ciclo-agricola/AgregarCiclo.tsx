@@ -1,7 +1,9 @@
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
 import LinkButton from "../../components/LinkButton";
-import axiosClient from "../../config/axiosClient";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Modal } from "../../components/Modal";
+import axiosClient from "../../config/axiosClient";
+import { useNavigate } from "react-router-dom";
 
 function AgregarCiclo() {
   const [ciclo, setCiclo] = useState({
@@ -9,6 +11,10 @@ function AgregarCiclo() {
     fecha: "",
     fase: "",
   });
+
+  const navigate = useNavigate();
+
+  const [isModalOpened, setIsModalOpened] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,8 +34,9 @@ function AgregarCiclo() {
   const saveCycle = async () => {
     setIsLoading(true);
     try {
-      const response = await axiosClient.post("/ciclo-agricola", ciclo);
-      console.log(response);
+      console.log(ciclo);
+      await axiosClient.post("/ciclo-agricola", ciclo);
+      setIsModalOpened(true);
     } catch (error) {
       console.log("Este es el error", error);
     } finally {
@@ -37,59 +44,76 @@ function AgregarCiclo() {
     }
   };
 
+  const handleCloseModal = () => {
+    navigate("/cicloAgricola");
+  };
+
   return (
-    <div className="container-form">
-      <div className="card-form">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="input-line">
-            <label htmlFor="ciclo">Ciclo Agricola:</label>
-            <input
-              type="text"
-              id="cicloAgricola"
-              name="cicloAgricola"
-              placeholder="dddd"
-              defaultValue={ciclo.cicloAgricola}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="input-line">
-            <label htmlFor="fecha">Fecha:</label>
-            <input
-              type="date"
-              id="fecha"
-              name="fecha"
-              placeholder="dddd"
-              defaultValue={ciclo.fecha}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="input-line">
-            <label htmlFor="fase">Fase:</label>
-            <input
-              type="text"
-              id="fase"
-              name="fase"
-              placeholder="dddd"
-              defaultValue={ciclo.fase}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="btn-a">
-            <LinkButton
-              icon={faXmark}
-              variant="secondary"
-              to="/cicloAgricola"
-              title="Cancelar"
-              size="1x"
-            />
-            <button type="submit" disabled={isLoading}>
-              Guardar
-            </button>
-          </div>
-        </form>
+    <>
+      <div className="container-form">
+        <div className="card-form">
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="input-line">
+              <label htmlFor="ciclo">Ciclo Agricola:</label>
+              <input
+                type="text"
+                id="cicloAgricola"
+                name="cicloAgricola"
+                placeholder="dddd"
+                defaultValue={ciclo.cicloAgricola}
+                onChange={handleChange}
+                autoComplete="off"
+                minLength={4}
+                maxLength={4}
+                required
+              />
+            </div>
+            <div className="input-line">
+              <label htmlFor="fecha">Fecha:</label>
+              <input
+                type="date"
+                id="fecha"
+                name="fecha"
+                placeholder="dddd"
+                defaultValue={ciclo.fecha}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input-line">
+              <label htmlFor="fase">Fase:</label>
+              <input
+                type="text"
+                id="fase"
+                name="fase"
+                placeholder="dddd"
+                defaultValue={ciclo.fase}
+                onChange={handleChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className="btn-a">
+              <LinkButton
+                icon={faXmark}
+                variant="secondary"
+                to="/cicloAgricola"
+                title="Cancelar"
+                size="1x"
+              />
+              <button type="submit" disabled={isLoading}>
+                Guardar
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      <Modal
+        title="Éxito"
+        icon="success"
+        text="Ciclo agricola creado con exito"
+        didClose={handleCloseModal}
+        show={isModalOpened}
+      />
+    </>
   );
 }
 
