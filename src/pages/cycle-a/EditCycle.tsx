@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../components/Button";
+import Button from "../../components/Button.tsx";
 import axiosClient from "../../config/axiosClient";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 

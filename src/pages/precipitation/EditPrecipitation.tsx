@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import Button from "../../components/Button.tsx";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
@@ -70,8 +70,8 @@ function EditPrecipitation() {
           rows="3"
         ></textarea>
       </div>
-      <div className="container-btn"> 
-      <Button  title="Agregar" icon={faSave} size="1x" to="/precipitacion" />
+      <div className="container-btn">
+        <Button title="Agregar" icon={faSave} size="1x" to="/precipitacion" />
       </div>
     </div>
   );

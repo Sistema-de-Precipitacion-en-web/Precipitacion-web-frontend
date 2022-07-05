@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/Button";
+import Button from "../../components/Button.tsx";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function EditStates() {

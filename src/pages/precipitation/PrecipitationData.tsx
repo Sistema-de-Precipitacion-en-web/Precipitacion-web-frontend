@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../../components/Button";
+import Button from "../../components/Button.tsx";
 import { faEdit, faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 

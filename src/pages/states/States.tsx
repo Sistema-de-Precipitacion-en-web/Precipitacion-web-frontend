@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import Button from "../../components/Button";
+import Button from "../../components/Button.tsx";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./stateStyle.css";
 
