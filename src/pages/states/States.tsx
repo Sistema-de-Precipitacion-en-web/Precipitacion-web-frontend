@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import Button from "../../components/Button";
+import LinkButton from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./stateStyle.css";
 
@@ -33,7 +33,7 @@ function States() {
     <div>
       <div className="container-tab">
         <div className="button-box">
-          <Button
+          <LinkButton
             icon={faPlus}
             to="/estados/agregar"
             variant="default"

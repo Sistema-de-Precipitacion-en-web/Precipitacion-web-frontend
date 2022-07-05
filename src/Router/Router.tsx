@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import CycleData from "../pages/cycle-a/CycleData";
-import EditCycle from "../pages/cycle-a/EditCycle";
+import TablaCicloAgricola from "../pages/ciclo-agricola/TablaCicloAgricola";
+import AgregarCiclo from "../pages/ciclo-agricola/AgregarCiclo";
 import Home from "../pages/Home";
 import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
 import Precipitation from "../pages/precipitation/PrecipitationData";
@@ -15,8 +15,8 @@ function Router() {
     <Routes>
       <Route path="/" element={<Home />} />
       {/* Rutas ciclo agricola*/}
-      <Route path="/cicloAgricola" element={<CycleData />} />
-      <Route path="/cicloAgricola/agregar" element={<EditCycle />} />
+      <Route path="/cicloAgricola" element={<TablaCicloAgricola />} />
+      <Route path="/cicloAgricola/agregar" element={<AgregarCiclo />} />
       {/* Rutas estados*/}
       <Route path="/estados" element={<States />} />
       <Route path="/estados/agregar" element={<EditStates />} />

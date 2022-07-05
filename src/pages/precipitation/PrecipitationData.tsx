@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../../components/Button";
+import LinkButton from "../../components/LinkButton";
 import { faEdit, faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 
@@ -9,7 +9,7 @@ function PrecipitationData() {
     <div className="container-fluid">
       <div className="d-flex justify-content-between align-items-end size-form">
         <div></div>
-        <Button
+        <LinkButton
           title="Agregar"
           icon={faPlus}
           size="1x"

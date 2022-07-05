@@ -1,18 +1,20 @@
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
-import Button from "../../components/Button";
+import LinkButton from "../../components/LinkButton";
 import axiosClient from "../../config/axiosClient";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function EditCycle() {
-  const [cycle, setCycle] = useState({
+function AgregarCiclo() {
+  const [ciclo, setCiclo] = useState({
     cicloAgricola: "",
     fecha: "",
     fase: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setCycle({
-      ...cycle,
+    setCiclo({
+      ...ciclo,
       [e.target.name]: e.target.value,
     });
   };
@@ -23,10 +25,16 @@ function EditCycle() {
     saveCycle();
   };
 
-  const saveCycle = () => {
-    axiosClient.post("/api/v1/ciclo-agricola", cycle).then((res) => {
-      alert(res.data.message);
-    });
+  const saveCycle = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axiosClient.post("/ciclo-agricola", ciclo);
+      console.log(response);
+    } catch (error) {
+      console.log("Este es el error", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,10 +45,10 @@ function EditCycle() {
             <label htmlFor="ciclo">Ciclo Agricola:</label>
             <input
               type="text"
-              id="ciclo"
-              name="ciclo"
+              id="cicloAgricola"
+              name="cicloAgricola"
               placeholder="dddd"
-              defaultValue={cycle.cicloAgricola}
+              defaultValue={ciclo.cicloAgricola}
               onChange={handleChange}
               required
             />
@@ -52,7 +60,7 @@ function EditCycle() {
               id="fecha"
               name="fecha"
               placeholder="dddd"
-              defaultValue={cycle.fecha}
+              defaultValue={ciclo.fecha}
               onChange={handleChange}
             />
           </div>
@@ -63,19 +71,21 @@ function EditCycle() {
               id="fase"
               name="fase"
               placeholder="dddd"
-              defaultValue={cycle.fase}
+              defaultValue={ciclo.fase}
               onChange={handleChange}
             />
           </div>
           <div className="btn-a">
-            <Button
+            <LinkButton
               icon={faXmark}
               variant="secondary"
               to="/cicloAgricola"
               title="Cancelar"
               size="1x"
             />
-            <button type="submit">Guardar</button>
+            <button type="submit" disabled={isLoading}>
+              Guardar
+            </button>
           </div>
         </form>
       </div>
@@ -83,4 +93,4 @@ function EditCycle() {
   );
 }
 
-export default EditCycle;
+export default AgregarCiclo;

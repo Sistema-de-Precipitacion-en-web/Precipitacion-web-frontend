@@ -1,4 +1,4 @@
-import Button from "../../components/Button";
+import LinkButton from "../../components/LinkButton";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
@@ -71,7 +71,12 @@ function EditPrecipitation() {
         ></textarea>
       </div>
       <div className="container-btn">
-        <Button title="Agregar" icon={faSave} size="1x" to="/precipitacion" />
+        <LinkButton
+          title="Agregar"
+          icon={faSave}
+          size="1x"
+          to="/precipitacion"
+        />
       </div>
     </div>
   );

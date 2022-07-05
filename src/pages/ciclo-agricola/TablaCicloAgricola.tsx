@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import Button from "../../components/Button";
+import LinkButton from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
 
-function CycleData() {
+function TablaCicloAgricola() {
   const [cycles, setCycles] = useState([]);
 
   const getCycles = async () => {
@@ -16,7 +16,7 @@ function CycleData() {
     getCycles();
   }, []);
 
-  const rederCycle = () => {
+  const renderCycle = () => {
     return (
       <tbody>
         {cycles.map((cycle: any, index) => (
@@ -36,7 +36,7 @@ function CycleData() {
   return (
     <div className="container-table">
       <div className="button-p">
-        <Button
+        <LinkButton
           icon={faPlus}
           to="/cicloAgricola/agregar"
           variant="default"
@@ -56,10 +56,10 @@ function CycleData() {
             <th>Fase</th>
           </tr>
         </thead>
-        {rederCycle()}
+        {renderCycle()}
       </table>
     </div>
   );
 }
 
-export default CycleData;
+export default TablaCicloAgricola;
