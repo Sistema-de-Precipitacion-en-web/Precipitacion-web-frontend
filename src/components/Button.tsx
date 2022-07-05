@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import "./styles/button.css";
 
 interface Props {
-  variant: string;
+  variant?: string;
   to: string;
   title: string;
   icon: IconProp;
   size: SizeProp;
 }
 
-const Button = ({ variant, to, title, icon, size }: Props) => (
+const Button = ({ variant = "default", to, title, icon, size }: Props) => (
   <Link className={variant} to={to}>
     {title}
     <FontAwesomeIcon icon={icon} size={size} />

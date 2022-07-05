@@ -1,4 +1,4 @@
-import Button from "../../components/Button.tsx";
+import Button from "../../components/Button";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./styleMunicipalities.css";
 

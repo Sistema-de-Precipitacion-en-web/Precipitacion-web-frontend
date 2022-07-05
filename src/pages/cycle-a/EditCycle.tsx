@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Button from "../../components/Button.tsx";
+import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
+import Button from "../../components/Button";
 import axiosClient from "../../config/axiosClient";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,14 +10,14 @@ function EditCycle() {
     fase: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setCycle({
       ...cycle,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     //Save Cycle
     saveCycle();
@@ -25,7 +25,7 @@ function EditCycle() {
 
   const saveCycle = () => {
     axiosClient.post("/api/v1/ciclo-agricola", cycle).then((res) => {
-      alert(res.message);
+      alert(res.data.message);
     });
   };
 

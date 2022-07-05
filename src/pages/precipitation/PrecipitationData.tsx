@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "../../components/Button.tsx";
+import Button from "../../components/Button";
 import { faEdit, faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 
@@ -16,8 +16,8 @@ function PrecipitationData() {
           to="/precipitacion/editar"
         />
       </div>
-      <div class="table-responsive">
-        <table class="table table-striped">
+      <div className="table-responsive">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th scope="col">Nombre Estación</th>
@@ -51,7 +51,7 @@ function PrecipitationData() {
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
+              <td colSpan={2}>Larry the Bird</td>
               <td>@twitter</td>
               <td>@fat</td>
               <td>@fat</td>

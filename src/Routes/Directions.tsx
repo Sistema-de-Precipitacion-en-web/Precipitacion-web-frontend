@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import CycleData from "../pages/cycle-a/CycleData.tsx";
-import EditCycle from "../pages/cycle-a/EditCycle.tsx";
-import Home from "../pages/Home.tsx";
-import EditPrecipitation from "../pages/precipitation/EditPrecipitation.tsx";
-import Precipitation from "../pages/precipitation/PrecipitationData.tsx";
-import Producers from "../pages/producers/index.tsx";
-import States from "../pages/states/States.tsx";
-import EditStates from "../pages/states/EditStates.tsx";
-import Municipalities from "../pages/municipalities/Municipalities.tsx";
-import EditMunicipalities from "../pages/municipalities/EditMunicipalities.tsx";
+import CycleData from "../pages/cycle-a/CycleData";
+import EditCycle from "../pages/cycle-a/EditCycle";
+import Home from "../pages/Home";
+import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
+import Precipitation from "../pages/precipitation/PrecipitationData";
+import Producers from "../pages/producers/index";
+import States from "../pages/states/States";
+import EditStates from "../pages/states/EditStates";
+import Municipalities from "../pages/municipalities/Municipalities";
+import EditMunicipalities from "../pages/municipalities/EditMunicipalities";
 
 function Directions() {
   return (

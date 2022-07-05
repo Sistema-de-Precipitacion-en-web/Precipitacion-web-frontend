@@ -1,4 +1,4 @@
-import Button from "../../components/Button.tsx";
+import Button from "../../components/Button";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function EditMunicipalities() {

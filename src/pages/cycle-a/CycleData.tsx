@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import Button from "../../components/Button.tsx";
+import Button from "../../components/Button";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
 
@@ -19,7 +19,7 @@ function CycleData() {
   const rederCycle = () => {
     return (
       <tbody>
-        {cycles.map((cycle, index) => (
+        {cycles.map((cycle: any, index) => (
           <tr key={index}>
             <td data-label="ciclo">{cycle.cicloAgricola}</td>
             <td data-label="semana">{cycle.semana}</td>
