@@ -5,10 +5,10 @@ import Home from "../pages/Home";
 import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
 import Precipitation from "../pages/precipitation/PrecipitationData";
 import Producers from "../pages/producers/index";
-import Estados from "../pages/Estados/Estados";
-import AgregarEstado from "../pages/Estados/AgregarEstado";
+import Estados from "../pages/estados/Estados";
+import AgregarEstado from "../pages/estados/AgregarEstado";
 import Municipios from "../pages/municipios/Municipios";
-import EditMunicipalities from "../pages/municipios/EditMunicipalities";
+import AgregarMunicipio from "../pages/municipios/AgregarMunicipio";
 
 function Router() {
   return (
@@ -25,7 +25,7 @@ function Router() {
       <Route path="/precipitacion/agregar" element={<EditPrecipitation />} />
       {/* Rutas municipios */}
       <Route path="/municipios" element={<Municipios />} />
-      <Route path="/municipios/agregar" element={<EditMunicipalities />} />
+      <Route path="/municipios/agregar" element={<AgregarMunicipio />} />
       {/* Rutas productores */}
       <Route path="/productores" element={<Producers />} />
     </Routes>

@@ -1,24 +1,11 @@
 import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./styleMunicipalities.css";
-import { useEffect, useState } from "react";
+import { useFetchData } from "../../hooks/useFetchData";
 import { IMunicipio } from "../../interfaces/municipio.model";
-import axiosClient from "../../config/axiosClient";
 
 function Municipios() {
-  const [municipios, setMunicipios] = useState<IMunicipio[]>([]);
-
-  const getMunicipios = async () => {
-    const {
-      data: { data },
-    } = await axiosClient.get("/municipios");
-
-    setMunicipios(data);
-  };
-
-  useEffect(() => {
-    getMunicipios();
-  }, []);
+  const municipios = useFetchData<IMunicipio>("/municipios");
 
   return (
     <div>

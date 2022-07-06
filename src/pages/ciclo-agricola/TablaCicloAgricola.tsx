@@ -3,30 +3,23 @@ import axiosClient from "../../config/axiosClient";
 import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
+import { useFetchData } from "../../hooks/useFetchData";
+import { ICicloAgricola } from "../../interfaces/ciclo-agricola.model";
 
 function TablaCicloAgricola() {
-  const [cycles, setCycles] = useState([]);
-
-  const getCycles = async () => {
-    const response = await axiosClient.get("/ciclo-agricola");
-    setCycles(response.data.data);
-  };
-
-  useEffect(() => {
-    getCycles();
-  }, []);
+  const ciclos = useFetchData<ICicloAgricola>("/ciclo-agricola");
 
   const renderCycle = () => {
     return (
       <tbody>
-        {cycles.map((cycle: any, index) => (
-          <tr key={index}>
-            <td data-label="ciclo">{cycle.cicloAgricola}</td>
-            <td data-label="semana">{cycle.semana}</td>
-            <td data-label="dia">{cycle.dia}</td>
-            <td data-label="mes">{cycle.mes}</td>
-            <td data-label="año">{cycle.anio}</td>
-            <td data-label="fase">{cycle.fase}</td>
+        {ciclos.map(({ cicloAgricola, semana, mes, dia, anio, fase, id }) => (
+          <tr key={id}>
+            <td data-label="ciclo">{cicloAgricola}</td>
+            <td data-label="semana">{semana}</td>
+            <td data-label="dia">{dia}</td>
+            <td data-label="mes">{mes}</td>
+            <td data-label="año">{anio}</td>
+            <td data-label="fase">{fase}</td>
           </tr>
         ))}
       </tbody>

@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axiosClient from "../../config/axiosClient";
 import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./stateStyle.css";
+import { useFetchData } from "../../hooks/useFetchData";
+import { IEstado } from "../../interfaces/estado.model";
 
 function Estados() {
-  const [estados, setEstados] = useState<
-    { claveEstado: string; nombreEstado: string }[]
-  >([]);
-
-  const obtenerEstados = async () => {
-    const {
-      data: { data },
-    } = await axiosClient.get("/estados");
-    setEstados(data);
-  };
-
-  useEffect(() => {
-    obtenerEstados();
-  }, []);
-
+  const estados = useFetchData<IEstado>("/estados");
   return (
     <div>
       <div className="container-tab">

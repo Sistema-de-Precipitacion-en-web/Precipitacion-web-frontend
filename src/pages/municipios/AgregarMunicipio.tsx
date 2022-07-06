@@ -1,7 +1,7 @@
 import NavLink from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function EditMunicipalities() {
+function AgregarMunicipio() {
   return (
     <div className="container-form">
       <div className="card-form">
@@ -44,4 +44,4 @@ function EditMunicipalities() {
   );
 }
 
-export default EditMunicipalities;
+export default AgregarMunicipio;
