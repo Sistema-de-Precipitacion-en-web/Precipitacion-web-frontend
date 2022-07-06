@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import axiosClient from "../../config/axiosClient";
 import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
