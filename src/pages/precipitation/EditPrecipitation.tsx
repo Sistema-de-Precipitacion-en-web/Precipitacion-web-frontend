@@ -1,4 +1,4 @@
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
@@ -71,12 +71,7 @@ function EditPrecipitation() {
         ></textarea>
       </div>
       <div className="container-btn">
-        <LinkButton
-          title="Agregar"
-          icon={faSave}
-          size="1x"
-          to="/precipitacion"
-        />
+        <NavLink title="Agregar" icon={faSave} size="1x" to="/precipitacion" />
       </div>
     </div>
   );

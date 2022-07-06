@@ -1,4 +1,4 @@
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./styleMunicipalities.css";
 
@@ -7,7 +7,7 @@ function Municipalities() {
     <div>
       <div className="container-tab">
         <div className="button-box-m">
-          <LinkButton
+          <NavLink
             icon={faPlus}
             to="/municipios/agregar"
             variant="default"

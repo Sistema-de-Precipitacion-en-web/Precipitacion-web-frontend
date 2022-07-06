@@ -5,8 +5,8 @@ import Home from "../pages/Home";
 import EditPrecipitation from "../pages/precipitation/EditPrecipitation";
 import Precipitation from "../pages/precipitation/PrecipitationData";
 import Producers from "../pages/producers/index";
-import States from "../pages/states/States";
-import EditStates from "../pages/states/EditStates";
+import Estados from "../pages/Estados/Estados";
+import AgregarEstado from "../pages/Estados/AgregarEstado";
 import Municipalities from "../pages/municipalities/Municipalities";
 import EditMunicipalities from "../pages/municipalities/EditMunicipalities";
 
@@ -18,8 +18,8 @@ function Router() {
       <Route path="/ciclo-agricola" element={<TablaCicloAgricola />} />
       <Route path="/ciclo-agricola/agregar" element={<AgregarCiclo />} />
       {/* Rutas estados*/}
-      <Route path="/estados" element={<States />} />
-      <Route path="/estados/agregar" element={<EditStates />} />
+      <Route path="/estados" element={<Estados />} />
+      <Route path="/estados/agregar" element={<AgregarEstado />} />
       {/* Rutas precipitacion*/}
       <Route path="/precipitacion" element={<Precipitation />} />
       <Route path="/precipitacion/agregar" element={<EditPrecipitation />} />

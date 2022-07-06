@@ -11,11 +11,11 @@ interface Props {
   size: SizeProp;
 }
 
-const LinkButton = ({ variant = "default", to, title, icon, size }: Props) => (
+const NavLink = ({ variant = "default", to, title, icon, size }: Props) => (
   <Link className={variant} to={to}>
     {title}
     <FontAwesomeIcon icon={icon} size={size} />
   </Link>
 );
 
-export default LinkButton;
+export default NavLink;

@@ -1,4 +1,4 @@
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function EditMunicipalities() {
@@ -29,7 +29,7 @@ function EditMunicipalities() {
             </select>
           </div>
           <div className="btn-a">
-            <LinkButton
+            <NavLink
               icon={faXmark}
               variant="secondary"
               to="/municipios"

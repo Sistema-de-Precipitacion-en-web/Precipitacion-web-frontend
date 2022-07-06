@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
 
@@ -36,7 +36,7 @@ function TablaCicloAgricola() {
   return (
     <div className="container-table">
       <div className="button-p">
-        <LinkButton
+        <NavLink
           icon={faPlus}
           to="/ciclo-agricola/agregar"
           variant="default"

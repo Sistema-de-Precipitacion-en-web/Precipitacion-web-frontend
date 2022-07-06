@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../components/Modal";
 import axiosClient from "../../config/axiosClient";
@@ -94,7 +94,7 @@ function AgregarCiclo() {
               />
             </div>
             <div className="btn-a">
-              <LinkButton
+              <NavLink
                 icon={faXmark}
                 variant="secondary"
                 to="/ciclo-agricola"
@@ -105,7 +105,7 @@ function AgregarCiclo() {
                 Guardar
               </button>
             </div>
-            {existsError && <p>Ha ocurrido un error, intentlo más tarde</p>}
+            {existsError && <p>Ha ocurrido un error, intentalo más tarde</p>}
           </form>
         </div>
       </div>

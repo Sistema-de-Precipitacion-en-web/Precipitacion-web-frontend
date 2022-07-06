@@ -1,39 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axiosClient from "../../config/axiosClient";
-import LinkButton from "../../components/LinkButton";
+import NavLink from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./stateStyle.css";
 
-function States() {
-  const [state, setSta] = useState([]);
+function Estados() {
+  const [estados, setEstados] = useState<
+    { claveEstado: string; nombreEstado: string }[]
+  >([]);
 
-  const getSta = async () => {
-    const response = await axiosClient.get("/estados");
-    setSta(response.data.data);
+  const obtenerEstados = async () => {
+    const {
+      data: { data },
+    } = await axiosClient.get("/estados");
+    setEstados(data);
   };
 
   useEffect(() => {
-    getSta();
+    obtenerEstados();
   }, []);
-
-  const renderState = () => {
-    return (
-      <tbody>
-        {state.map((states, index) => (
-          <tr key={index}>
-            <td data-label="clave">22</td>
-            <td data-label="nombre">CDMX</td>
-          </tr>
-        ))}
-      </tbody>
-    );
-  };
 
   return (
     <div>
       <div className="container-tab">
         <div className="button-box">
-          <LinkButton
+          <NavLink
             icon={faPlus}
             to="/estados/agregar"
             variant="default"
@@ -49,11 +40,18 @@ function States() {
               <th>Nombre</th>
             </tr>
           </thead>
-          {renderState()}
+          <tbody>
+            {estados.map(({ claveEstado, nombreEstado }) => (
+              <tr key={claveEstado}>
+                <td data-label="clave">{claveEstado}</td>
+                <td data-label="nombre">{nombreEstado}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
   );
 }
 
-export default States;
+export default Estados;
