@@ -7,8 +7,8 @@ import Precipitation from "../pages/precipitation/PrecipitationData";
 import Producers from "../pages/producers/index";
 import Estados from "../pages/Estados/Estados";
 import AgregarEstado from "../pages/Estados/AgregarEstado";
-import Municipalities from "../pages/municipalities/Municipalities";
-import EditMunicipalities from "../pages/municipalities/EditMunicipalities";
+import Municipios from "../pages/municipios/Municipios";
+import EditMunicipalities from "../pages/municipios/EditMunicipalities";
 
 function Router() {
   return (
@@ -24,7 +24,7 @@ function Router() {
       <Route path="/precipitacion" element={<Precipitation />} />
       <Route path="/precipitacion/agregar" element={<EditPrecipitation />} />
       {/* Rutas municipios */}
-      <Route path="/municipios" element={<Municipalities />} />
+      <Route path="/municipios" element={<Municipios />} />
       <Route path="/municipios/agregar" element={<EditMunicipalities />} />
       {/* Rutas productores */}
       <Route path="/productores" element={<Producers />} />
