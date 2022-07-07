@@ -46,6 +46,6 @@ export const useForm = <T extends Object>(url: string, data: T) => {
     handleSubmitForm,
     isModalOpened,
     navigate,
-    setMunicipio: setForm,
+    setForm,
   };
 };

@@ -12,7 +12,7 @@ function Precipitacion() {
         <div className="button-box">
           <NavLink
             icon={faPlus}
-            to="/estados/agregar"
+            to="/precipitacion/agregar"
             variant="default"
             title="Agregar"
             size="1x"

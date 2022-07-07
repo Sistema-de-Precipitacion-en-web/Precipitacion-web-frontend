@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import TablaCicloAgricola from "../pages/ciclo-agricola/TablaCicloAgricola";
 import AgregarCiclo from "../pages/ciclo-agricola/AgregarCiclo";
 import Home from "../pages/Home";
-import EditPrecipitation from "../pages/precipitaciones/EditPrecipitation";
+import AgregarPrecipitacion from "../pages/precipitaciones/AgregarPrecipitacion";
 import Precipitation from "../pages/precipitaciones/Precipitacion";
 import Producers from "../pages/producers/index";
 import Estados from "../pages/estados/Estados";
@@ -22,7 +22,7 @@ function Router() {
       <Route path="/estados/agregar" element={<AgregarEstado />} />
       {/* Rutas precipitacion*/}
       <Route path="/precipitacion" element={<Precipitation />} />
-      <Route path="/precipitacion/agregar" element={<EditPrecipitation />} />
+      <Route path="/precipitacion/agregar" element={<AgregarPrecipitacion />} />
       {/* Rutas municipios */}
       <Route path="/municipios" element={<Municipios />} />
       <Route path="/municipios/agregar" element={<AgregarMunicipio />} />
