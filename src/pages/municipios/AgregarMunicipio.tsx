@@ -2,60 +2,27 @@ import NavLink from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useFetchData } from "../../hooks/useFetchData";
 import { IEstado } from "../../interfaces/estado.model";
-import {
-  ChangeEventHandler,
-  FormEventHandler,
-  useEffect,
-  useState,
-} from "react";
-import axiosClient from "../../config/axiosClient";
+import { useEffect } from "react";
 import { Modal } from "../../components/Modal";
-import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
 
 function AgregarMunicipio() {
   const estados = useFetchData<IEstado>("/estados");
-  const [municipio, setMunicipio] = useState({
-    claveMunicipio: "",
-    nombreMunicipio: "",
-    claveEstado: "",
-  });
 
-  const [existsError, setExistsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isModalOpened, setIsModalOpened] = useState(false);
-
-  const navigate = useNavigate();
-
-  const handleSelectChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    setMunicipio({
-      ...municipio,
-      claveEstado: event.target.value,
-    });
-  };
-
-  const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setMunicipio({
-      ...municipio,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmitForm: FormEventHandler<HTMLFormElement> = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-    try {
-      await axiosClient.post("/municipios", municipio);
-      setIsModalOpened(true);
-    } catch (error) {
-      setExistsError(true);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const {
+    existsError,
+    isLoading,
+    handleSelectChange,
+    handleInputChange,
+    handleSubmitForm,
+    isModalOpened,
+    navigate,
+    setMunicipio,
+  } = useForm();
 
   useEffect(() => {
     setMunicipio((prev) => ({ ...prev, claveEstado: estados[0]?.claveEstado }));
-  }, [estados]);
+  }, [estados, setMunicipio]);
 
   return (
     <>
