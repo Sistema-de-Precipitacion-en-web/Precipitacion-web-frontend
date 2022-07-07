@@ -18,7 +18,11 @@ function AgregarMunicipio() {
     isModalOpened,
     navigate,
     setMunicipio,
-  } = useForm();
+  } = useForm("/municipios", {
+    claveMunicipio: "",
+    nombreMunicipio: "",
+    claveEstado: "",
+  });
 
   useEffect(() => {
     setMunicipio((prev) => ({ ...prev, claveEstado: estados[0]?.claveEstado }));

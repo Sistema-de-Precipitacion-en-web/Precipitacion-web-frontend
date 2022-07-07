@@ -2,12 +2,8 @@ import { useState, ChangeEventHandler, FormEventHandler } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosClient from "../config/axiosClient";
 
-export const useForm = () => {
-  const [municipio, setMunicipio] = useState({
-    claveMunicipio: "",
-    nombreMunicipio: "",
-    claveEstado: "",
-  });
+export const useForm = <T extends Object>(url: string, data: T) => {
+  const [form, setForm] = useState(data);
 
   const [existsError, setExistsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,15 +12,15 @@ export const useForm = () => {
   const navigate = useNavigate();
 
   const handleSelectChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    setMunicipio({
-      ...municipio,
+    setForm({
+      ...form,
       claveEstado: event.target.value,
     });
   };
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setMunicipio({
-      ...municipio,
+    setForm({
+      ...form,
       [event.target.name]: event.target.value,
     });
   };
@@ -33,7 +29,7 @@ export const useForm = () => {
     event.preventDefault();
     setIsLoading(true);
     try {
-      await axiosClient.post("/municipios", municipio);
+      await axiosClient.post(url, form);
       setIsModalOpened(true);
     } catch (error) {
       setExistsError(true);
@@ -50,6 +46,6 @@ export const useForm = () => {
     handleSubmitForm,
     isModalOpened,
     navigate,
-    setMunicipio,
+    setMunicipio: setForm,
   };
 };
