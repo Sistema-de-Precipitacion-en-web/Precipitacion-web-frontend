@@ -27,7 +27,6 @@ export const useForm = <T extends Object>(url: string, data: T) => {
 
   const handleSubmitForm: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-    console.log(form);
     setIsLoading(true);
     try {
       await axiosClient.post(url, form);

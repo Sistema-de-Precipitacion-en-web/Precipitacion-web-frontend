@@ -11,6 +11,7 @@ import Municipios from "../pages/municipios/Municipios";
 import AgregarMunicipio from "../pages/municipios/AgregarMunicipio";
 import { Estaciones } from "../pages/estaciones/Estaciones";
 import { AgregarEstacion } from "../pages/estaciones/AgregarEstacion";
+import { GraficaPrecipitaciones } from "../pages/estaciones/GraficaPrecipitaciones";
 
 function Router() {
   return (
@@ -32,6 +33,10 @@ function Router() {
       <Route path="/productores" element={<Producers />} />
       <Route path="/estaciones" element={<Estaciones />} />
       <Route path="/estaciones/agregar" element={<AgregarEstacion />} />
+      <Route
+        path="/estaciones/:id/precipitaciones"
+        element={<GraficaPrecipitaciones />}
+      />
     </Routes>
   );
 }
