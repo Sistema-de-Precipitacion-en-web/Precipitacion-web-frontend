@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../components/Modal";
 import axiosClient from "../../config/axiosClient";
@@ -94,7 +94,7 @@ function AgregarCiclo() {
               />
             </div>
             <div className="btn-a">
-              <NavLink
+              <LinkButton
                 icon={faXmark}
                 variant="secondary"
                 to="/ciclo-agricola"

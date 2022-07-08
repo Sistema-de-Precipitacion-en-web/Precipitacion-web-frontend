@@ -1,6 +1,6 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { Modal } from "../../components/Modal";
 import { useFetchData } from "../../hooks/useFetchData";
 import { useForm } from "../../hooks/useForm";
@@ -101,7 +101,7 @@ function AgregarPrecipitacion() {
               </select>
             </div>
             <div className="btn-a">
-              <NavLink
+              <LinkButton
                 icon={faXmark}
                 variant="secondary"
                 to="/municipios"

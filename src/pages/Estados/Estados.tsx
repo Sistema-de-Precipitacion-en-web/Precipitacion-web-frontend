@@ -1,4 +1,4 @@
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./stateStyle.css";
 import { useFetchData } from "../../hooks/useFetchData";
@@ -10,7 +10,7 @@ function Estados() {
     <div>
       <div className="container-tab">
         <div className="button-box">
-          <NavLink
+          <LinkButton
             icon={faPlus}
             to="/estados/agregar"
             variant="default"

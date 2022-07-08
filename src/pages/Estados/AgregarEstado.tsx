@@ -1,4 +1,4 @@
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { Modal } from "../../components/Modal";
@@ -66,7 +66,7 @@ function AgregarEstado() {
               />
             </div>
             <div className="btn-a">
-              <NavLink
+              <LinkButton
                 icon={faXmark}
                 variant="secondary"
                 to="/estados"

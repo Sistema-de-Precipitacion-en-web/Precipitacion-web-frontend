@@ -1,4 +1,4 @@
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./tableStyle.css";
 import { useFetchData } from "../../hooks/useFetchData";
@@ -27,7 +27,7 @@ function TablaCicloAgricola() {
   return (
     <div className="container-table">
       <div className="button-p">
-        <NavLink
+        <LinkButton
           icon={faPlus}
           to="/ciclo-agricola/agregar"
           variant="default"

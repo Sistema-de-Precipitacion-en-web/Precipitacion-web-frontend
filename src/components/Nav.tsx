@@ -70,6 +70,11 @@ class Nav extends React.Component<
                   </Link>
                 </div>
                 <div className="container-l">
+                  <Link to="/estaciones" className="link">
+                    Estaciones
+                  </Link>
+                </div>
+                <div className="container-l">
                   <Link to="/precipitacion" className="link">
                     Precipitaciones
                   </Link>

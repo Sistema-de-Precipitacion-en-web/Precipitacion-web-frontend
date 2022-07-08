@@ -1,4 +1,4 @@
-import NavLink from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useFetchData } from "../../hooks/useFetchData";
 import { IEstado } from "../../interfaces/estado.model";
@@ -77,7 +77,7 @@ function AgregarMunicipio() {
               </select>
             </div>
             <div className="btn-a">
-              <NavLink
+              <LinkButton
                 icon={faXmark}
                 variant="secondary"
                 to="/municipios"
