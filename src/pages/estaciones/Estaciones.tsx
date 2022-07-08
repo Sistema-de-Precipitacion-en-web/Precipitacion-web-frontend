@@ -1,4 +1,5 @@
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import LinkButton from "../../components/LinkButton";
 import { useFetchData } from "../../hooks/useFetchData";
 import { IEstacion } from "../../interfaces/estaciones.model";
@@ -26,6 +27,7 @@ export const Estaciones = () => {
               <th>longDec</th>
               <th>latDec</th>
               <th>Clave Localidad</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -43,6 +45,11 @@ export const Estaciones = () => {
                   <td data-label="longDec">{longDec}</td>
                   <td data-label="latDec">{latDec}</td>
                   <td data-label="claveLocalidad">{claveLocalidad}</td>
+                  <td>
+                    <Link to={`/estaciones/${claveEstacion}/precipitaciones`}>
+                      Ver precipitaciones
+                    </Link>
+                  </td>
                 </tr>
               )
             )}

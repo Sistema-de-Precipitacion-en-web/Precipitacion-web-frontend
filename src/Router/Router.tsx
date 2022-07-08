@@ -34,7 +34,7 @@ function Router() {
       <Route path="/estaciones" element={<Estaciones />} />
       <Route path="/estaciones/agregar" element={<AgregarEstacion />} />
       <Route
-        path="/estaciones/:id/precipitaciones"
+        path="/estaciones/:claveEstacion/precipitaciones"
         element={<GraficaPrecipitaciones />}
       />
     </Routes>

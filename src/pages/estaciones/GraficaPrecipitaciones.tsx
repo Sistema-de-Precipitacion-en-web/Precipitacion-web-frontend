@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import {
   ComposedChart,
-  Line,
   Bar,
   XAxis,
   YAxis,
@@ -13,7 +13,12 @@ import { useFetchData } from "../../hooks/useFetchData";
 import { IPrecipitacion } from "../../interfaces/precipitacion.model";
 
 export const GraficaPrecipitaciones = () => {
-  const precipitaciones = useFetchData<IPrecipitacion>("/precipitaciones");
+  const { claveEstacion } = useParams();
+
+  const precipitaciones = useFetchData<IPrecipitacion>(
+    `/estaciones/${claveEstacion}/precipitaciones`
+  );
+
   const [chartData, setchartData] = useState<
     Array<{ name: string; precipitaciones: number }>
   >([]);
