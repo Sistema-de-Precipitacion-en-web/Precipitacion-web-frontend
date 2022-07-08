@@ -11,7 +11,7 @@ export const Estaciones = () => {
         <div className="button-box">
           <LinkButton
             icon={faPlus}
-            to="/precipitacion/agregar"
+            to="/estaciones/agregar"
             variant="default"
             title="Agregar"
             size="1x"

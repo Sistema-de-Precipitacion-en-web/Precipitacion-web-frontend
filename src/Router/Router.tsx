@@ -10,6 +10,7 @@ import AgregarEstado from "../pages/estados/AgregarEstado";
 import Municipios from "../pages/municipios/Municipios";
 import AgregarMunicipio from "../pages/municipios/AgregarMunicipio";
 import { Estaciones } from "../pages/estaciones/Estaciones";
+import { AgregarEstacion } from "../pages/estaciones/AgregarEstacion";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       {/* Rutas productores */}
       <Route path="/productores" element={<Producers />} />
       <Route path="/estaciones" element={<Estaciones />} />
+      <Route path="/estaciones/agregar" element={<AgregarEstacion />} />
     </Routes>
   );
 }
