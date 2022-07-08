@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   ComposedChart,
   Line,
@@ -8,34 +9,34 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import { useFetchData } from "../../hooks/useFetchData";
+import { IPrecipitacion } from "../../interfaces/precipitacion.model";
 
-const data = [
-  {
-    name: "Semana 1",
-    precipitaciones: 590,
-  },
-  {
-    name: "Semana 2",
-    precipitaciones: 868,
-  },
-  {
-    name: "Semana 3",
-    precipitaciones: 1397,
-  },
-  {
-    name: "Page D",
-    precipitaciones: 1480,
-  },
-  {
-    name: "Page E",
-    precipitaciones: 1520,
-  },
-  {
-    name: "Page F",
-    precipitaciones: 1400,
-  },
-];
 export const GraficaPrecipitaciones = () => {
+  const precipitaciones = useFetchData<IPrecipitacion>("/precipitaciones");
+  const [chartData, setchartData] = useState<
+    Array<{ name: string; precipitaciones: number }>
+  >([]);
+
+  useEffect(() => {
+    setchartData([]);
+    if (precipitaciones.length === 0) {
+      return;
+    }
+    for (let i = 1; i <= 53; i++) {
+      const numeroPrecipitaciones = precipitaciones
+        .filter(({ semana }) => semana === i)
+        .reduce((a, b) => a + 1, 0);
+
+      setchartData((prev) => [
+        ...prev,
+        {
+          name: `Semana ${i}`,
+          precipitaciones: numeroPrecipitaciones,
+        },
+      ]);
+    }
+  }, [precipitaciones]);
   return (
     <div
       style={{
@@ -47,7 +48,7 @@ export const GraficaPrecipitaciones = () => {
       <ComposedChart
         width={1200}
         height={800}
-        data={data}
+        data={chartData}
         margin={{
           top: 20,
           right: 20,
@@ -61,7 +62,6 @@ export const GraficaPrecipitaciones = () => {
         <Tooltip />
         <Legend />
         <Bar dataKey="precipitaciones" barSize={20} fill="#413ea0" />
-        <Line type="monotone" dataKey="precipitaciones" stroke="#ff7300" />
       </ComposedChart>
     </div>
   );
