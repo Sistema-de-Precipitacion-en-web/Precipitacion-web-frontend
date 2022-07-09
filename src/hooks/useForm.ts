@@ -47,5 +47,6 @@ export const useForm = <T extends Object>(url: string, data: T) => {
     isModalOpened,
     navigate,
     setForm,
+    form,
   };
 };

@@ -12,6 +12,8 @@ import AgregarMunicipio from "../pages/municipios/AgregarMunicipio";
 import { Estaciones } from "../pages/estaciones/Estaciones";
 import { AgregarEstacion } from "../pages/estaciones/AgregarEstacion";
 import { GraficaPrecipitaciones } from "../pages/estaciones/GraficaPrecipitaciones";
+import { Cooperativas } from "../pages/cooperativas/Cooperativas";
+import { AgregarCooperativa } from "../pages/cooperativas/AgregarCooperativa";
 
 function Router() {
   return (
@@ -37,6 +39,8 @@ function Router() {
         path="/estaciones/:claveEstacion/precipitaciones"
         element={<GraficaPrecipitaciones />}
       />
+      <Route path="/cooperativas" element={<Cooperativas />} />
+      <Route path="/cooperativas/agregar" element={<AgregarCooperativa />} />
     </Routes>
   );
 }
