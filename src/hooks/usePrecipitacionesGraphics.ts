@@ -8,6 +8,11 @@ interface ISelectOption {
   id: number;
 }
 
+interface IChartData {
+  name: string;
+  Milimetros: number;
+}
+
 export const usePrecipitacionesGraphics = () => {
   const { claveEstacion } = useParams();
 
@@ -15,9 +20,7 @@ export const usePrecipitacionesGraphics = () => {
     `/estaciones/${claveEstacion}/precipitaciones`
   );
 
-  const [chartData, setchartData] = useState<
-    Array<{ name: string; Milimetros: number }>
-  >([]);
+  const [chartData, setchartData] = useState<IChartData[]>([]);
 
   const [selectOptions, setSelectOptions] = useState<ISelectOption[]>([]);
 
@@ -30,23 +33,25 @@ export const usePrecipitacionesGraphics = () => {
 
   const filterData = useCallback(
     (selectedList: ISelectOption[]) => {
-      const selectedYears = selectedList.map(({ id }) => id);
       setchartData([]);
+      const selectedYears = selectedList.map(({ id }) => id);
+      let auxChartData: IChartData[] = [];
       for (let i = 1; i <= 53; i++) {
-        const numeroPrecipitaciones = precipitaciones
+        const milimetros = precipitaciones
           .filter(
             ({ semana, anio }) => semana === i && selectedYears.includes(anio)
           )
           .reduce((a, b) => a + b.mm!, 0);
 
-        setchartData((prev) => [
-          ...prev,
+        auxChartData = [
+          ...auxChartData,
           {
             name: `Semana ${i}`,
-            Milimetros: numeroPrecipitaciones,
+            Milimetros: milimetros,
           },
-        ]);
+        ];
       }
+      setchartData([...auxChartData]);
     },
     [precipitaciones]
   );
@@ -76,6 +81,7 @@ export const usePrecipitacionesGraphics = () => {
         }
       });
 
+    auxSelectOptions.sort((a, b) => a.id - b.id);
     setSelectOptions([...auxSelectOptions]);
   }, [precipitaciones]);
 
