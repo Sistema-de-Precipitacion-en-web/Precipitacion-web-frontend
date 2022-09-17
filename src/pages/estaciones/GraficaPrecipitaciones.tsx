@@ -21,12 +21,13 @@ export const GraficaPrecipitaciones = () => {
         style={{ maxWidth: 900, margin: "40px auto" }}
       >
         <Multiselect
-          options={selectOptions} // Options to display in the dropdown
+          options={selectOptions}
           selectedValues={selectOptions[0] ? [selectOptions[0]] : null}
           onSelect={handleSelectChanges}
           onRemove={handleSelectChanges}
           placeholder="Selecciona los años deseados"
-          displayValue="name" // Property name to display in the dropdown options
+          emptyRecordMsg="No hay más opciones disponibles"
+          displayValue="name"
         />
       </div>
       <div
