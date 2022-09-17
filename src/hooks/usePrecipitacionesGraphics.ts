@@ -12,6 +12,7 @@ interface IChartData {
   name: string;
   Milimetros: number;
   Mes: string;
+  "Ciclo Agricola": string;
 }
 
 export const Meses = [
@@ -29,11 +30,31 @@ export const Meses = [
   "Diciembre",
 ];
 
-function getDateOfWeek(w: number, y: number) {
-  var d = 1 + (w - 1) * 7; // 1st of January + 7 days for each week
-
-  return new Date(y, 0, d);
-}
+export const getCicloAgricola = (semana: number) => {
+  let cicloAgricola = "";
+  if (semana >= 1 && semana <= 5) {
+    cicloAgricola = "Cosecha";
+  }
+  if (semana >= 14 && semana <= 18) {
+    cicloAgricola = "Almácigos";
+  }
+  if (semana >= 18 && semana <= 26) {
+    cicloAgricola = "Siembra";
+  }
+  if (semana >= 26 && semana <= 29) {
+    cicloAgricola = "Transplante";
+  }
+  if (semana >= 29 && semana <= 33) {
+    cicloAgricola = "Capicula";
+  }
+  if (semana >= 33 && semana <= 45) {
+    cicloAgricola = "Crecimiento";
+  }
+  if (semana >= 45 && semana <= 43) {
+    cicloAgricola = "Cosecha";
+  }
+  return cicloAgricola;
+};
 
 export const usePrecipitacionesGraphics = () => {
   const { claveEstacion } = useParams();
@@ -68,12 +89,15 @@ export const usePrecipitacionesGraphics = () => {
           0
         );
 
+        const cicloAgricola = getCicloAgricola(i);
+
         auxChartData = [
           ...auxChartData,
           {
             name: `Semana ${i}`,
             Milimetros: milimetros,
             Mes: Meses[+filteredPrecipitations[0]?.mes - 1],
+            "Ciclo Agricola": cicloAgricola,
           },
         ];
       }
