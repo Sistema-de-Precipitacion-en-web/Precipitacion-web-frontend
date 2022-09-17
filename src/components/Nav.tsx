@@ -84,6 +84,11 @@ class Nav extends React.Component<
                     Cooperativas
                   </Link>
                 </div>
+                <div className="container-l">
+                  <Link to="/productores" className="link">
+                    Productores
+                  </Link>
+                </div>
               </div>
             </div>
           }

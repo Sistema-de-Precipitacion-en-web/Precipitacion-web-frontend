@@ -119,7 +119,7 @@ function AgregarPrecipitacion() {
       <Modal
         title="Éxito"
         icon="success"
-        text="Municipio  creado con exito"
+        text="Precipitación creada con exito"
         didClose={() => navigate("/precipitacion")}
         show={isModalOpened}
       />

@@ -4,7 +4,6 @@ import AgregarCiclo from "../pages/ciclo-agricola/AgregarCiclo";
 import Home from "../pages/Home";
 import AgregarPrecipitacion from "../pages/precipitaciones/AgregarPrecipitacion";
 import Precipitation from "../pages/precipitaciones/Precipitacion";
-import Producers from "../pages/producers/index";
 import Estados from "../pages/estados/Estados";
 import AgregarEstado from "../pages/estados/AgregarEstado";
 import Municipios from "../pages/municipios/Municipios";
@@ -14,6 +13,7 @@ import { AgregarEstacion } from "../pages/estaciones/AgregarEstacion";
 import { GraficaPrecipitaciones } from "../pages/estaciones/GraficaPrecipitaciones";
 import { Cooperativas } from "../pages/cooperativas/Cooperativas";
 import { AgregarCooperativa } from "../pages/cooperativas/AgregarCooperativa";
+import { Productores } from "../pages/productores/Productores";
 
 function Router() {
   return (
@@ -32,7 +32,6 @@ function Router() {
       <Route path="/municipios" element={<Municipios />} />
       <Route path="/municipios/agregar" element={<AgregarMunicipio />} />
       {/* Rutas productores */}
-      <Route path="/productores" element={<Producers />} />
       <Route path="/estaciones" element={<Estaciones />} />
       <Route path="/estaciones/agregar" element={<AgregarEstacion />} />
       <Route
@@ -41,6 +40,7 @@ function Router() {
       />
       <Route path="/cooperativas" element={<Cooperativas />} />
       <Route path="/cooperativas/agregar" element={<AgregarCooperativa />} />
+      <Route path="/productores" element={<Productores />} />
     </Routes>
   );
 }
