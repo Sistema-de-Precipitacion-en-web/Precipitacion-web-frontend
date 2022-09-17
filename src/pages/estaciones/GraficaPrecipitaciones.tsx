@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   ComposedChart,
@@ -31,26 +31,42 @@ export const GraficaPrecipitaciones = () => {
 
   const [selectOptions, setSelectOptions] = useState<ISelectOption[]>([]);
 
+  const handleSelectChanges = (
+    selectedList: ISelectOption[],
+    affectedItem: ISelectOption
+  ) => {
+    filterData(selectedList);
+  };
+
+  const filterData = useCallback(
+    (selectedList: ISelectOption[]) => {
+      const selectedYears = selectedList.map(({ id }) => id);
+      setchartData([]);
+      for (let i = 1; i <= 53; i++) {
+        const numeroPrecipitaciones = precipitaciones
+          .filter(
+            ({ semana, anio }) => semana === i && selectedYears.includes(anio)
+          )
+          .reduce((a, b) => a + b.mm!, 0);
+
+        setchartData((prev) => [
+          ...prev,
+          {
+            name: `Semana ${i}`,
+            Milimetros: numeroPrecipitaciones,
+          },
+        ]);
+      }
+    },
+    [precipitaciones]
+  );
+
   useEffect(() => {
-    setchartData([]);
     if (precipitaciones.length === 0) {
       return;
     }
-
-    for (let i = 1; i <= 53; i++) {
-      const numeroPrecipitaciones = precipitaciones
-        .filter(({ semana }) => semana === i)
-        .reduce((a, b) => a + b.mm!, 0);
-
-      setchartData((prev) => [
-        ...prev,
-        {
-          name: `Semana ${i}`,
-          Milimetros: numeroPrecipitaciones,
-        },
-      ]);
-    }
-  }, [precipitaciones]);
+    filterData(selectOptions[0] ? [selectOptions[0]] : []);
+  }, [precipitaciones, selectOptions, filterData]);
 
   useEffect(() => {
     let auxSelectOptions: ISelectOption[] = [];
@@ -81,6 +97,10 @@ export const GraficaPrecipitaciones = () => {
       >
         <Multiselect
           options={selectOptions} // Options to display in the dropdown
+          selectedValues={selectOptions[0] ? [selectOptions[0]] : null}
+          onSelect={handleSelectChanges}
+          onRemove={handleSelectChanges}
+          placeholder="Selecciona los años deseados"
           displayValue="name" // Property name to display in the dropdown options
         />
       </div>
