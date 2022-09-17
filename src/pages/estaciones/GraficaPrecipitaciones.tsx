@@ -6,6 +6,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Area,
+  Line,
 } from "recharts";
 import Multiselect from "multiselect-react-dropdown";
 import { usePrecipitacionesGraphics } from "../../hooks/usePrecipitacionesGraphics";
@@ -54,6 +56,7 @@ export const GraficaPrecipitaciones = () => {
           <Tooltip />
           <Legend />
           <Bar dataKey="Milimetros" barSize={20} fill="#413ea0" />
+          <Line type="monotone" dataKey="Mes" stroke="#ff7300" />
         </ComposedChart>
       </div>
     </>
